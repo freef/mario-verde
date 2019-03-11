@@ -15,7 +15,7 @@ const createEventFailure = () => {
 }
 const indexEventsSuccess = (responseData) => {
   const showEventsHtml = showEventsTemplate({ events: responseData.events })
-  $('#user-message').text('Successfully got all games!')
+  $('#user-message').text('Successfully got all events!')
   $('form').trigger('reset')
   $('input').trigger('reset')
   $('.content').empty()
@@ -28,7 +28,7 @@ const indexEventsFailure = () => {
 }
 
 const showEventSuccess = (responseData) => {
-  $('#user-message').text('Successfully got one game!')
+  $('#user-message').text('Successfully got one event!')
   $('.content').empty()
   const showEventsHtml = showEventsTemplate({ events: responseData })
   $('.content').append(showEventsHtml)
@@ -36,7 +36,7 @@ const showEventSuccess = (responseData) => {
   $('input').trigger('reset')
 }
 const showEventFailure = () => {
-  $('#user-message').text('Failed to get one game')
+  $('#user-message').text('Failed to get one event')
   $('form').trigger('reset')
   $('input').trigger('reset')
   // $('.content').append(showEventsHtml)
