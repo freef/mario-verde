@@ -14,7 +14,6 @@ const createEventFailure = () => {
   $('input').trigger('reset')
 }
 const indexEventsSuccess = (responseData) => {
-  console.log(responseData.events)
   const showEventsHtml = showEventsTemplate({ events: responseData.events })
   $('#user-message').text('Successfully got all games!')
   $('form').trigger('reset')
@@ -30,7 +29,6 @@ const indexEventsFailure = () => {
 
 const showEventSuccess = (responseData) => {
   $('#user-message').text('Successfully got one game!')
-  console.log(responseData)
   $('.content').empty()
   const showEventsHtml = showEventsTemplate({ events: responseData })
   $('.content').append(showEventsHtml)
