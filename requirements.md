@@ -6,7 +6,7 @@ In order to get a satisfactory score, by the time you present your project, you
 ### Deployment
 Be deployed online, where the rest of the world can access it.
 1.  [x]  Host on your public Github page, not Github Enterprise.
-1.  [ ]  Deploy client application on GH pages.
+1.  [x]  Deploy client application on GH pages.
 1.  [x]  Deploy server application on Heroku.
 
 ### Version Control

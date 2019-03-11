@@ -1,6 +1,7 @@
 # Mario Verde Client
 Hi all and welcome to the GitHub Repo for Mario Verde.
 This project is designed to be a matchmaking service for those looking for someone to play with.
+This repos is for the front end of Mario-Verde. For the back end please visit https://sleepy-citadel-92470.herokuapp.com/
 
 ## Description
 We all know that games are more fun when played together, but random matchmaing provides limited tools for making new friends and that the built in tools for meeting peeople seem to bring out the worst in everyone.
@@ -23,7 +24,7 @@ On Mario Verde players can post events, each with a title, description, time, an
 ## How it works
 Front end makes ajax requests to the api.
 the API is a restufl api built on ruby on rails. it queries the database and returns a JSON.
-JavaScript parses the JSON and renders pieces of it on the page using handlebars. 
+JavaScript parses the JSON and renders pieces of it on the page using handlebars.
 
 ## Planning
 The biggest challenge in planning this project was deciding on what to make. My original idea was for a find a belay buddy site but I disliked how reliant that idea was on location, so I applied the same idea to online games. The service is geared more towards owners of a nintendo switch and tabletop players but will also be flexible enough for players on other platforms to make use of it.
