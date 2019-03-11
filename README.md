@@ -1,7 +1,8 @@
 # Mario Verde Client
 Hi all and welcome to the GitHub Repo for Mario Verde.
 This project is designed to be a matchmaking service for those looking for someone to play with.
-This repos is for the front end of Mario-Verde. For the back end please visit https://sleepy-citadel-92470.herokuapp.com/
+This repos is for the front end of Mario-Verde. For the back end please visit https://github.com/freef/mario-verde-api
+the deployed api is available at https://sleepy-citadel-92470.herokuapp.com/
 
 ## Description
 We all know that games are more fun when played together, but random matchmaing provides limited tools for making new friends and that the built in tools for meeting peeople seem to bring out the worst in everyone.
