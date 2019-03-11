@@ -1,123 +1,99 @@
-# My Content
+# Mario Verde Client
+Hi all and welcome to the GitHub Repo for Mario Verde.
+This project is designed to be a matchmaking service for those looking for someone to play with.
 
-## Installation
+## Description
+We all know that games are more fun when played together, but random matchmaing provides limited tools for making new friends and that the built in tools for meeting peeople seem to bring out the worst in everyone.
+This tool aims to make it easier to play together.
+On Mario Verde players can post events, each with a title, description, time, and some contact info. Players can then reach out and make plans to play with each other. Thus making
+## Technology
+### Front End
+- [HTML 5](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+- [jQuery](https://api.jquery.com/)
+- [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+- [Handlebars JS](https://handlebarsjs.com/)
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/mario-verde-master.zip`.
-1. Rename the template directory from `mario-verde-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+### Back End
+- [PostgreSQL](https://www.postgresql.org/docs/)
+- [Ruby](https://ruby-doc.org/)
+- [Ruby on Rails](https://guides.rubyonrails.org/)
 
-## Structure
+## How it works
+Front end makes ajax requests to the api.
+the API is a restufl api built on ruby on rails. it queries the database and returns a JSON.
+JavaScript parses the JSON and renders pieces of it on the page using handlebars. 
 
-### Scripts
+## Planning
+The biggest challenge in planning this project was deciding on what to make. My original idea was for a find a belay buddy site but I disliked how reliant that idea was on location, so I applied the same idea to online games. The service is geared more towards owners of a nintendo switch and tabletop players but will also be flexible enough for players on other platforms to make use of it.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Next I planned out my "pie in the sky" project database, by mapping out tables and planning columns.
 
-### Config
+From there I drew up some quick wireframes to give me a vague idea of how my project should work.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+My development process from this point has been entirely driven by the information in the [requirments](./requirements.md) file.
 
-### Styles
+This document will list planned improvements and will be the guiding doc for all future improvements. Please see that section for more information on my planning process.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+## Problem solving
+- Check that the problem is a requirment
+- Double check that its actually a requirement
+- Read the error message
+- Check for plurlalization/capitalization
+- Check syntax
+- Check if the code thats giving you trouble works somewhere else
+- Simplify the code/process
+- console log paramaters
+- console log output
+- try running code again
+- Try do do it differently if none of the above worked and you still get the same error message
 
-### Forms and Using `getFormFields`
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+## Entity Relationship Diagram
+[Initial ERD](https://imgur.com/CjyIGyF)
 
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
+Current ERD
 ```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
+|users|-|-<|events|
 ```
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+## Known Bugs
+honestly there's so little right now that i don't know of any. Please open an issue if you find any.
 
-## Adding Fonts
+## Wirerames
+[Desktop](https://imgur.com/3rN1cbD)
+[Mobile](https://imgur.com/sRafjj3)
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+## User stories
+as a user I'd like to create an account so i can browse games
+as a user I'd like to log in so i can respond to events
+as a user I'd like to create an event to play with strangers online
+as a user I'd like to check and see if players have responded to my event
+as a user I'd like to sign up to "attend" an event hosted by another player so i can play games
+as a user I'd like to hide my email/discord id/nintendo id from the genral public
+as a user i'd like my email/discord id/nintendo ide to be visible to attendees or hosts for events i'm participating in
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+## Potential Future Improvements
+- Meta
+  - find a better way to identify and catalog necessary UX improvements
+- UI Improvements
+  - Put each item in a box
+  - Create Nav Bar
+  - Add Color
+  - allow users to hide their contact info
+- Features
+  - Pin the user's events to the top
+  - allow users to delete their events in by clicking a delete button related to that event
+  - allow users to hide events they arent interested in attending
+  - allow users to only display events based on a dropdown
+  - allow users to search for events by keyword
+  - sort events by date
+  - hide events with past dates
+  - allow users to sign up as an attendee for an event
+-DB Changes
+  - add column to users for profile
+  - add column to users for discord id
+  - add column to events for platform (xbox, pc, switch, playstation, tabletop)
+  - create attendees table
+    - many to many relationship from events and users

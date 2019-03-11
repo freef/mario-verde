@@ -13,28 +13,29 @@
     </head>
     <body>
       <h1>Mario Verde</h1>
+      <h2>Find your player 2</h2>
       <section class="request" id="crud">
         <div class="auth">
           <h3>Auth</h3>
           <p id="user-message"></p>
 
-        <form id="sign-in-form">
+        <form id="sign-in-form" class="signed-out-only">
           <input name="credentials[email]" type="email" placeholder="email" required>
           <input name="credentials[password]" type="password" placeholder="password" required>
           <button type="submit">sign in</button>
         </form>
 
-        <form id="sign-up-form">
+        <form id="sign-up-form" class="signed-out-only">
           <input name="credentials[email]" type="email" placeholder="email" required>
           <input name="credentials[password]" type="password" placeholder="password" required>
           <input name="credentials[password_confirmation]" type="password" placeholder="password" required>
           <button type="submit">sign up</button>
         </form>
 
-        <form id="sign-out-form">
+        <form id="sign-out-form" class="d-none signed-in-only ">
           <button type="submit">sign out</button>
         </form>
-        <form id="change-password-form">
+        <form id="change-password-form" class="d-none signed-in-only ">
           <input name="passwords[old]" type="password" placeholder="old password" required>
           <input name="passwords[new]" type="password" placeholder="new password" required>
           <button type="submit">change password</button>
@@ -43,28 +44,28 @@
 
       <div class="events">
         <h3>Events</h3>
-        <form id="create-event-form">
-          <input name="event[title]" type="text" placeholder="title">
-          <input name="event[description]" type="text" placeholder="description">
-          <input name="event[date]" type="date" placeholder="date">
+        <form id="create-event-form" class="d-none signed-in-only ">
+          <input name="event[title]" type="text" placeholder="title" required>
+          <input name="event[description]" type="text" placeholder="description" required>
+          <input name="event[date]" type="datetime-local" placeholder="date" required>
           <button type="submit">Create Event</button>
         </form>
         <form id="index-event-form">
           <button type="submit"> show all events</button>
         </form>
         <form id="show-event-form">
-          <input name="event[id]" type="number">
+          <input name="event[id]" type="number" required>
           <button type="submit">show event</button>
         </form>
-        <form id="update-event-form">
-          <input name="event[id]" type="number" placeholder="id">
-          <input name="event[title]" type="text" placeholder="title">
-          <input name="event[description]" type="text" placeholder="description">
-          <input name="event[date]" type="date" placeholder="date">
+        <form id="update-event-form" class="d-none signed-in-only ">
+          <input name="event[id]" type="number" placeholder="id" required>
+          <input name="event[title]" type="text" placeholder="title" required>
+          <input name="event[description]" type="text" placeholder="description" required>
+          <input name="event[date]" type="datetime-local" placeholder="date" required>
           <button type="submit">Update Event</button>
         </form>
-        <form id="delete-event-form">
-          <input name="event[id]" type="number">
+        <form id="delete-event-form" class="signed-in-only d-none">
+          <input name="event[id]" type="number" placeholder="Event ID" required>
           <button type="submit">Delete Event</button>
         </form>
       </div>

@@ -3,6 +3,7 @@
     <h2>
       <small>Title:</small> {{limit event.title 40}}
     </h2>
+    <p><small>ID: </small> {{event.id}}</p>
     <p>
       <small>Description:</small>
        {{#if event.description}}
@@ -19,7 +20,7 @@
         No date provided.
       {{/if}}
       <p>
-        <small>Email:</small>{{event.user.email}}
+        <small>Contact:</small>{{event.user.email}}
     </p>
   </div>
 
