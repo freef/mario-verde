@@ -1,0 +1,27 @@
+{{#each events as |event|}}
+  <div class="event" data-id="{{event.id}}">
+    <h2>
+      <small>Title:</small> {{limit event.title 40}}
+    </h2>
+    <p><small>ID: </small> {{event.id}}</p>
+    <p>
+      <small>Description:</small>
+       {{#if event.description}}
+        {{event.description}}
+      {{else}}
+        No description provided.
+      {{/if}}
+    </p>
+    <p>
+      <small>Date:</small>
+      {{#if event.date}}
+        {{event.date}}
+      {{else}}
+        No date provided.
+      {{/if}}
+      <p>
+        <small>Contact:</small>{{event.user.email}}
+    </p>
+  </div>
+
+{{/each}}
