@@ -6,8 +6,8 @@
     - **Do Not Fork And Clone**
     - Click the "Clone or Download" button and select "Download Zip".
 1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
+    `unzip /Users/<user-name>/Downloads/mario-verde-master.zip`.
+1. Rename the template directory from `mario-verde-master` to
     `<project-name>-client`.
 1. Empty [`README.md`](README.md) and fill with your own content.
 1. Replace all instances of `ga-wdi-boston.browser-template` with the name of

@@ -12,6 +12,64 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Mario Verde</h1>
+      <section class="request" id="crud">
+        <div class="auth">
+          <h3>Auth</h3>
+          <p id="user-message"></p>
+
+        <form id="sign-in-form">
+          <input name="credentials[email]" type="email" placeholder="email" required>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <button type="submit">sign in</button>
+        </form>
+
+        <form id="sign-up-form">
+          <input name="credentials[email]" type="email" placeholder="email" required>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <input name="credentials[password_confirmation]" type="password" placeholder="password" required>
+          <button type="submit">sign up</button>
+        </form>
+
+        <form id="sign-out-form">
+          <button type="submit">sign out</button>
+        </form>
+        <form id="change-password-form">
+          <input name="passwords[old]" type="password" placeholder="old password" required>
+          <input name="passwords[new]" type="password" placeholder="new password" required>
+          <button type="submit">change password</button>
+        </form>
+      </div>
+
+      <div class="events">
+        <h3>Events</h3>
+        <form id="create-event-form">
+          <input name="event[title]" type="text" placeholder="title">
+          <input name="event[description]" type="text" placeholder="description">
+          <input name="event[date]" type="date" placeholder="date">
+          <button type="submit">Create Event</button>
+        </form>
+        <form id="index-event-form">
+          <button type="submit"> show all events</button>
+        </form>
+        <form id="show-event-form">
+          <input name="event[id]" type="number">
+          <button type="submit">show event</button>
+        </form>
+        <form id="update-event-form">
+          <input name="event[id]" type="number" placeholder="id">
+          <input name="event[title]" type="text" placeholder="title">
+          <input name="event[description]" type="text" placeholder="description">
+          <input name="event[date]" type="date" placeholder="date">
+          <button type="submit">Update Event</button>
+        </form>
+        <form id="delete-event-form">
+          <input name="event[id]" type="number">
+          <button type="submit">Delete Event</button>
+        </form>
+      </div>
+      </section>
+      <section class="content" id="content">
+      </section>
     </body>
 </html>
