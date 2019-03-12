@@ -43,6 +43,9 @@ const onDeleteEvent = event => {
   api.deleteEvent(formData)
     .then(ui.deleteEventSuccess)
     .catch(ui.deleteEventFailure)
+    .then(api.indexEvents)
+    .then(ui.indexEventsSuccess)
+    .catch(ui.indexEventsFailure)
 }
 
 module.exports = {

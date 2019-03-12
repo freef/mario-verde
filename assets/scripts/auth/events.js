@@ -2,6 +2,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const userApiEvents = require('../events/api.js')
+const userEventsUi = require('../events/ui.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -19,6 +21,10 @@ const onSignIn = event => {
   api.signIn(formData)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+    .then(userApiEvents.indexMyEvents)
+    .then(userEventsUi.myEventsSuccess)
+
+    .catch(userEventsUi.indexEventsFailure)
 }
 
 const onSignOut = event => {

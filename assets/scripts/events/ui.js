@@ -1,6 +1,7 @@
 'use strict'
 // const store = require('../store.js')
 const showEventsTemplate = require('../templates/event-listing.handlebars')
+const showMyEventsTemplate = require('../templates/my-events.handlebars')
 
 const createEventSuccess = () => {
   $('#user-message').text('Successfully created new event')
@@ -56,11 +57,19 @@ const deleteEventSuccess = () => {
   $('#user-message').text('Successfully deleted event!')
   $('form').trigger('reset')
   $('input').trigger('reset')
+  $('.content').empty()
 }
 const deleteEventFailure = () => {
   $('#user-message').text('Failed to delete event.')
   $('form').trigger('reset')
   $('input').trigger('reset')
+}
+
+const myEventsSuccess = (responseData) => {
+  $('#user-message').text('Successfully retreived events')
+  const showEventsHtml = showMyEventsTemplate({ events: responseData.events })
+  $('.my-content').empty()
+  $('.my-content').append(showEventsHtml)
 }
 
 module.exports = {
@@ -73,5 +82,6 @@ module.exports = {
   updateEventSuccess,
   updateEventFailure,
   deleteEventSuccess,
-  deleteEventFailure
+  deleteEventFailure,
+  myEventsSuccess
 }
