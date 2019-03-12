@@ -21,6 +21,16 @@ const indexEvents = () => {
   })
 }
 
+const indexMyEvents = () => {
+  return $.ajax({
+    url: config.apiUrl + '/my-events',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const showEvent = (formData) => {
   const id = formData.event.id
   return $.ajax({
@@ -58,5 +68,6 @@ module.exports = {
   indexEvents,
   showEvent,
   updateEvent,
-  deleteEvent
+  deleteEvent,
+  indexMyEvents
 }
