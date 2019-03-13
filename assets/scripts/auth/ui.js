@@ -39,6 +39,8 @@ const signOutSuccess = () => {
   $('input').trigger('reset')
   $('.signed-out-only').removeClass('d-none')
   $('.signed-in-only').addClass('d-none')
+  $('.content').empty()
+  $('.mycontent').empty()
 }
 const signOutFailure = (responseData) => {
   $('#user-message').text('Failed to sign out successfully')

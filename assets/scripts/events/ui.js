@@ -7,6 +7,11 @@ const createEventSuccess = () => {
   $('#user-message').text('Successfully created new event')
   $('form').trigger('reset')
   $('input').trigger('reset')
+  $('.new-event-field').addClass('d-none')
+  $('#show-new-button').removeAttr('disabled')
+  $('#user-message').text('New event canceled')
+  $('form').trigger('reset')
+  $('input').trigger('reset')
 }
 
 const createEventFailure = () => {

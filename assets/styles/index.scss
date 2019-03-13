@@ -32,10 +32,12 @@ nav {
 }
 .control-button {
   min-height:86px;
+  min-width:75px;
     @media(min-width:750px){
       min-height:0px;
   margin: .5rem;
   padding: .5rem;
+  min-width: 140px;
 }
 }
 
@@ -55,6 +57,10 @@ nav {
 }
 .content {
   color: $mvgray;
+}
+
+.yellowbg {
+  background-color: $mvyellow;
 }
 
 .redbg {
@@ -78,9 +84,11 @@ nav {
   padding: 5rem;
 }
 }
+
 .event-card {
   width:100%;
 }
+
 .jumbotron {
   background-color: $mvred;
   width: 100%;
@@ -101,6 +109,10 @@ nav {
   padding:0;
   margin:0 auto;
   font-size:4rem;
+}
+
+.dark-text{
+  color: $mvgray;
 }
 
 .logo {
