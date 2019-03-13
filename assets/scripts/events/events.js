@@ -9,6 +9,7 @@ const onCreateEvent = event => {
   const formData = getFormFields(form)
   api.createEvent(formData)
     .then(ui.createEventSuccess)
+    .then(onIndexMyEvents)
     .catch(ui.createEventFailure)
 }
 
