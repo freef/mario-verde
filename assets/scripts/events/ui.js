@@ -66,11 +66,9 @@ const deleteEventFailure = () => {
 }
 
 const myEventsSuccess = (responseData) => {
-  console.log(responseData)
   $('#user-message').text('Successfully retreived events')
   const showEventsHtml = showMyEventsTemplate({ events: responseData.events })
   $('.my-content').empty()
-  console.log('plonk')
   $('.my-content').append(showEventsHtml)
   $('.edit-mode').addClass('d-none')
   $('.view-mode').removeClass('d-none')
@@ -90,6 +88,16 @@ const stopUpdateBtn = (formData) => {
   $('input').trigger('reset')
 }
 
+const hideEvent = (data) => {
+  $(`[data-id="${data}"]`).hide()
+  $('#user-message').text('Event closed')
+}
+
+const hideMyEvents = () => {
+  $('.my-content').empty()
+  $('#user-message').text('Events hidden')
+}
+
 module.exports = {
   createEventSuccess,
   createEventFailure,
@@ -103,5 +111,7 @@ module.exports = {
   deleteEventFailure,
   myEventsSuccess,
   showEditBtn,
-  stopUpdateBtn
+  stopUpdateBtn,
+  hideEvent,
+  hideMyEvents
 }

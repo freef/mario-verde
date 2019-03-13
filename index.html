@@ -1,77 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Mario-Verde</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Mario-Verde</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <nav class="navbar navbar-fixed-top sticky navbar-light">
-        <form id="sign-out-form" class="d-none signed-in-only">
-          <button type="submit" class="btn btn-outline-light">sign out</button>
-        </form>
-      </nav>
-      <div class="all-content container">
-        <header class="jumbotron">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-light flex-row-reverse justify-content-start">
+    <form id="sign-out-form" class="d-none signed-in-only">
+      <button type="submit" class="btn btn-outline-light">Sign Out</button>
+    </form>
+    <button id="show-sign-up-btn" class="btn btn-outline-light show-sign-up signed-out-only">Sign Up</button>
+    <button id="show-sign-in-btn" class="signed-out-only btn btn-outline-light show-sign-in">Sign In</button>
+    <button id="hide-sign-up-btn" class="btn btn-outline-light hide-sign-up signed-out-only d-none">Cancel</button>
+    <button id="hide-sign-in-btn" class="signed-out-only btn btn-outline-light hide-sign-in d-none">Cancel</button>
+    <form id="sign-up-form" class="signed-out-only hide-sign-up d-none">
+      <input name="credentials[email]" type="email" placeholder="email" required>
+      <input name="credentials[password]" type="password" placeholder="password" required>
+      <input name="credentials[password_confirmation]" type="password" placeholder="password" required>
+      <button type="submit" class="btn btn-outline-light">Submit</button>
+    </form>
+    <form id="sign-in-form" class="signed-out-only hide-sign-in d-none">
+      <input name="credentials[email]" type="email" placeholder="email" required>
+      <input name="credentials[password]" type="password" placeholder="password" required>
+      <button type="submit" class="btn btn-outline-light">Submit</button>
+    </form>
+    <button id="hide-change-pw-btn" class="btn btn-outline-light signed-in-only d-none change-pw-form">Cancel</button>
+    <button id="show-change-pw-btn" class="btn btn-outline-light signed-in-only d-none">Change Password</button>
+    <form id="change-password-form" class="d-none signed-in-only change-pw-form">
+      <input name="passwords[old]" type="password" placeholder="old password" required>
+      <input name="passwords[new]" type="password" placeholder="new password" required>
+      <button type="submit" class="btn btn-outline-light">Submit</button>
+    </form>
+  </nav>
+  <div class="all-content container">
+    <header class="jumbotron">
       <h1 class="title text-center col-8">Mario Verde</h1>
       <h2 class="subhead text-center">Find your Player 2</h2>
     </header>
-      <section class="request" id="crud">
-        <div class="auth">
-          <h3>User Stuff</h3>
-          <p id="user-message"></p>
 
-        <form id="sign-in-form" class="signed-out-only">
-          <input name="credentials[email]" type="email" placeholder="email" required>
-          <input name="credentials[password]" type="password" placeholder="password" required>
-          <p></p>
-          <button type="submit" class="btn btn-outline-light">sign in</button>
-        </form>
-        <button class="btn btn-outline-light show-sign-up">sign up</button>
-        <form id="sign-up-form" class="signed-out-only">
-          <input name="credentials[email]" type="email" placeholder="email" required>
-          <input name="credentials[password]" type="password" placeholder="password" required>
-          <input name="credentials[password_confirmation]" type="password" placeholder="password" required>
-          <button type="submit" class="btn btn-outline-light">sign up</button>
-        </form>
+    <section class="main-control-bar container d-flex justify-content-space-around">
+      <form id="show-new-event-form">
+        <button id="show-new-button" class="d-none btn btn-outline-light control-button signed-in-only">New Event</button>
+      </form>
 
+      <form id="index-event-form">
+        <button type="submit" class="btn btn-outline-light control-button"> Show All Events</button>
+      </form>
+      <form id="show-my-events-form">
+        <button id="show-my-events-btn" class="d-none signed-in-only btn btn-outline-light control-button">Show My Events</button>
+      </form>
+      <form id="hide-my-events-form">
+        <button id="hide-my-events-btn" class="d-none signed-in-only btn btn-outline-light control-button">Hide My Events</button>
+      </form>
+    </section>
 
-        <form id="change-password-form" class="d-none signed-in-only ">
-          <input name="passwords[old]" type="password" placeholder="old password" required>
-          <input name="passwords[new]" type="password" placeholder="new password" required>
-          <button type="submit" class="btn btn-outline-light">change password</button>
-        </form>
-      </div>
+    <div class="auth">
+      <h3 id="user-message"></h3>
 
-      <div class="events">
-        <h3>Events</h3>
-        <form id="create-event-form" class="d-none signed-in-only ">
-          <input name="event[title]" type="text" placeholder="title" required>
-          <textarea name="event[description]" placeholder="description" required></textarea>
-          <input name="event[date]" type="date" placeholder="date" required>
-          <input name="event[time]" type="time" placeholder="time" required>
-          <button type="submit" class="btn btn-outline-light">Create Event</button>
-        </form>
-
-        <form id="show-event-form">
-          <input name="event[id]" type="number" required>
-          <button type="submit" class="btn btn-outline-light">show event</button>
-        </form>
-        <form id="index-event-form">
-          <button type="submit" class="btn btn-outline-light"> show all events</button>
-        </form>
-      </div>
-      </section>
-      <section class="my-content signed-in-only container" id="my-content">
-      </section>
-      <section class="content container" id="content">
-      </section>
     </div>
-    </body>
+    <div class="d-none new-event-field user-events user-content bluebg signed-in-only">
+      <form id="create-event-form" class="create-event-form d-none signed-in-only">
+        <h2 class="extra-bottom-margin">New Event</h2>
+        <h2><small>Title:</small> <input name="event[title]" type="text" placeholder="title" required></h2>
+        <p><small>Description:</small> <textarea name="event[description]" placeholder="description" required></textarea></p>
+        <p><small>Date:</small> <input name="event[date]" type="date" placeholder="date" required>
+          <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required></p>
+        <button type="submit" class="btn btn-outline-light edit-events-button">Create Event</button>
+      </form>
+    <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">
+      <button type="submit" id="cancel-new-event-button" class="btn btn-outline-light edit-events-button">Cancel</button>
+    </form>
+    </div>
+    <section class="my-content signed-in-only container" id="my-content">
+    </section>
+    <section class="content container" id="content">
+    </section>
+  </div>
+</body>
+
 </html>

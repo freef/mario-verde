@@ -19,8 +19,6 @@
           {{else}}
             No date provided.
           {{/if}}
-        </p>
-        <p>
           <small>Time:</small>
           {{#if event.readtime}}{{event.readtime}}
           {{else}}
@@ -38,30 +36,26 @@
         <p><small>Description: </small><textarea name="event[description]" placeholder="description" required>{{event.description}}</textarea></p>
         <p><small>Date: </small><input name="event[date]" type="date" placeholder="date" value="{{event.date}}" required></p>
         <p>
-        <smal>Time: </smal><input name="event[time]" type="time" placeholder="time" value="{{event.readtime}}" required>
-        <p></p>
-            <button type="submit" class="btn btn-outline-light update-btn edit-events-button">Update Event</button>
+          <smal>Time: </smal><input name="event[time]" type="time" placeholder="time" value="{{event.readtime}}" required>
+          <p></p>
+          <button type="submit" class="btn btn-outline-light update-btn edit-events-button">Submit</button>
       </form>
 
       <form class="d-none edit-mode-{{event.id}} hide-form edit-mode">
         <input name="id" type="number" value="{{event.id}}" class="d-none" required>
-        <button type="submit" class="btn btn-outline-light stop-update-btn edit-events-button">Cancel Update</button>
+        <button type="submit" class="btn btn-outline-light stop-update-btn edit-events-button">Cancel</button>
       </form>
 
-      <form class="edit-mode edit-mode-{{event.id}} delete-event-form">
+      <form class="d-none edit-mode edit-mode-{{event.id}} delete-event-form">
         <input name="id" type="number" value="{{event.id}}" class="d-none" required>
-        <button type="submit" class="btn btn-outline-light edit-events-button">Delete Event</button>
+        <button type="submit" class="btn btn-outline-warning edit-events-button">Delete</button>
       </form>
-
-
-    <form class="view-form view-mode-{{event.id}} view-mode">
-      <input name="id" type="number" value="{{event.id}}" class="d-none" required>
-      <button type="submit" class="btn btn-outline-light view-mode edit-btn edit-events-button">Edit Event</button>
-    </form>
-
-
-
-  </div>
+      <form class="view-form view-mode-{{event.id}} view-mode">
+        <input name="id" type="number" value="{{event.id}}" class="d-none" required>
+        <button type="submit" class="d-inline btn btn-outline-light view-mode edit-btn edit-events-button">Edit Event</button>
+      </form>
+      <button class="btn btn-outline-dark event-hider-btn btn-sm" data-id="{{event.id}}">Close</button>
+    </div>
   </div>
 
 {{/each}}

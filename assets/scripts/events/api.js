@@ -54,7 +54,6 @@ const updateEvent = (formData) => {
 
 const deleteEvent = (formData) => {
   const id = formData.id
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + `/events/${id}`,
     method: 'DELETE',

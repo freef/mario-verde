@@ -20,7 +20,12 @@ const onIndexEvents = event => {
 }
 
 const onIndexMyEvents = () => {
-  console.log('howdy')
+  api.indexMyEvents()
+    .then(ui.myEventsSuccess)
+    .catch(ui.indexEventsFailure)
+}
+const onIndexMyEventsBtn = (event) => {
+  event.preventDefault()
   api.indexMyEvents()
     .then(ui.myEventsSuccess)
     .catch(ui.indexEventsFailure)
@@ -70,6 +75,15 @@ const onStopUpdateBtn = event => {
   ui.stopUpdateBtn(formData)
 }
 
+const onHideEvent = event => {
+  event.preventDefault()
+  ui.hideEvent(event.target.getAttribute('data-id'))
+}
+const onHideMyEvents = event => {
+  event.preventDefault()
+  ui.hideMyEvents()
+}
+
 module.exports = {
   onCreateEvent,
   onIndexEvents,
@@ -77,5 +91,8 @@ module.exports = {
   onUpdateEvent,
   onDeleteEvent,
   onEditBtn,
-  onStopUpdateBtn
+  onStopUpdateBtn,
+  onHideEvent,
+  onIndexMyEventsBtn,
+  onHideMyEvents
 }

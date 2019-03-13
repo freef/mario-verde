@@ -17,15 +17,19 @@ section {
 }
 
 nav {
-  margin:0 auto;
-  max-width: 800px;
-  position: sticky;
+  background-color: $mvgray;
+  margin: 0 auto;
+  max-width:800px;
+}
+.control-button {
+  margin: .5rem;
+  padding: .5rem;
 }
 
 .edit-events-button {
-  width: 25%;
-  padding: .5rem;
   margin: .5rem;
+  padding: .5rem;
+  width: 25%;
 }
 
 .content {
@@ -40,6 +44,10 @@ nav {
   background-color: $mvgreen;
 }
 
+.bluebg {
+  background-color:$mvblue;
+}
+
 .all-content {
   margin: 0 auto;
   max-width: 800px;
@@ -47,31 +55,40 @@ nav {
   min-height: 100vh;
   padding: 5rem;
 }
-
+.event-card {
+  width:100%;
+}
 .jumbotron {
   background-color: $mvred;
   width: 100%;
   margin: 1.5rem auto;
   border: 1rem solid white;
   border-radius: 25px;
-    box-shadow: -1rem 1rem 1px dimgray;
-    max-width:700px;
+  box-shadow: -1rem 1rem 1px dimgray;
+  max-width: 700px;
 }
 
 .title {
   color: $mvyellow;
 }
 
+.extra-bottom-margin {
+  margin-bottom: 1.5rem;
+}
+
 .subhead {
   color: $mvyellow;
 }
-
+.event-hider-btn {
+  margin:1rem;
+}
 .user-events {
   border: 3px white solid;
   border-radius: 2rem;
   margin: 2rem auto;
   box-shadow: -1rem 1rem 1px gray;
-  max-width:700px;
+  max-width: 700px;
+    padding:1rem;
 }
 
 .user-content {
