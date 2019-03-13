@@ -57,7 +57,7 @@
       </form>
 
       <form id="index-event-form">
-        <button type="submit" class="btn btn-outline-light control-button"> Show All Events</button>
+        <button id="show-all-events-button" type="submit" class="btn btn-outline-light control-button"> Show All Events</button>
       </form>
       <form id="show-my-events-form">
         <button id="show-my-events-btn" class="d-none signed-in-only btn btn-outline-light control-button">Show My Events</button>
@@ -77,7 +77,7 @@
         <h2><small>Title:</small> <input name="event[title]" type="text" placeholder="title" required></h2>
         <p><small>Description:</small> <textarea name="event[description]" placeholder="description" required></textarea></p>
         <p><small>Date:</small> <input name="event[date]" type="date" placeholder="date" required>
-          <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required></p>
+        <span class="time">  <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required> </span></p>
         <button type="submit" class="btn btn-outline-light edit-events-button">Create Event</button>
       </form>
       <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">

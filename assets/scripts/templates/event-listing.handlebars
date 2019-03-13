@@ -20,12 +20,12 @@
       {{else}}
         No date provided.
       {{/if}}
-      <small>Time:</small>
+      <span class="time"><small>Time:</small>
       {{#if event.readtime}}{{event.readtime}}
       {{else}}
         No time provided.
       {{/if}}
-    </p>
+    <span class="time"></p>
       <p> <small>Contact:</small>{{event.user.email}} </p>
       <button class="btn btn-outline-dark event-hider-btn edit-events-button" data-id="{{event.id}}">Close Event</button>
   </div>
