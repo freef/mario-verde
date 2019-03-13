@@ -66,10 +66,28 @@ const deleteEventFailure = () => {
 }
 
 const myEventsSuccess = (responseData) => {
+  console.log(responseData)
   $('#user-message').text('Successfully retreived events')
   const showEventsHtml = showMyEventsTemplate({ events: responseData.events })
   $('.my-content').empty()
+  console.log('plonk')
   $('.my-content').append(showEventsHtml)
+  $('.edit-mode').addClass('d-none')
+  $('.view-mode').removeClass('d-none')
+}
+
+const showEditBtn = (formData) => {
+  $(`.edit-mode-${formData.id}`).removeClass('d-none')
+  $(`.view-mode-${formData.id}`).addClass('d-none')
+  $('form').trigger('reset')
+  $('input').trigger('reset')
+}
+
+const stopUpdateBtn = (formData) => {
+  $(`.view-mode-${formData.id}`).removeClass('d-none')
+  $(`.edit-mode-${formData.id}`).addClass('d-none')
+  $('form').trigger('reset')
+  $('input').trigger('reset')
 }
 
 module.exports = {
@@ -83,5 +101,7 @@ module.exports = {
   updateEventFailure,
   deleteEventSuccess,
   deleteEventFailure,
-  myEventsSuccess
+  myEventsSuccess,
+  showEditBtn,
+  stopUpdateBtn
 }

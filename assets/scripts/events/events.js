@@ -19,6 +19,13 @@ const onIndexEvents = event => {
     .catch(ui.indexEventsFailure)
 }
 
+const onIndexMyEvents = () => {
+  console.log('howdy')
+  api.indexMyEvents()
+    .then(ui.myEventsSuccess)
+    .catch(ui.indexEventsFailure)
+}
+
 const onShowEvent = event => {
   event.preventDefault()
   const form = event.target
@@ -34,8 +41,10 @@ const onUpdateEvent = event => {
   const formData = getFormFields(form)
   api.updateEvent(formData)
     .then(ui.updateEventSuccess)
-    .catch(ui.updateEventFailure)
+    .then(onIndexMyEvents)
+    .catch(ui.indexEventsFailure)
 }
+
 const onDeleteEvent = event => {
   event.preventDefault()
   const form = event.target
@@ -43,9 +52,22 @@ const onDeleteEvent = event => {
   api.deleteEvent(formData)
     .then(ui.deleteEventSuccess)
     .catch(ui.deleteEventFailure)
-    .then(api.indexEvents)
-    .then(ui.indexEventsSuccess)
+    .then(onIndexMyEvents)
     .catch(ui.indexEventsFailure)
+}
+
+const onEditBtn = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  ui.showEditBtn(formData)
+}
+
+const onStopUpdateBtn = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  ui.stopUpdateBtn(formData)
 }
 
 module.exports = {
@@ -53,5 +75,7 @@ module.exports = {
   onIndexEvents,
   onShowEvent,
   onUpdateEvent,
-  onDeleteEvent
+  onDeleteEvent,
+  onEditBtn,
+  onStopUpdateBtn
 }

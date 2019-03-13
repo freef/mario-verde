@@ -1,13 +1,81 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'colors';
+
+body {
+  background: $mvyellow;
+  color: white;
+}
+
+h1 {
+  margin: 20px auto;
+  text-align: center;
+}
+
+section {
+  justify-content: center;
+  text-align: center;
+}
+
+nav {
+  margin:0 auto;
+  max-width: 800px;
+  position: sticky;
+}
+
+.edit-events-button {
+  width: 25%;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.content {
+  color: $mvgray;
+}
+
+.redbg {
+  background-color: $mvred;
+}
+
+.greenbg {
+  background-color: $mvgreen;
+}
+
+.all-content {
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: $mvgray;
+  min-height: 100vh;
+  padding: 5rem;
+}
+
+.jumbotron {
+  background-color: $mvred;
+  width: 100%;
+  margin: 1.5rem auto;
+  border: 1rem solid white;
+  border-radius: 25px;
+    box-shadow: -1rem 1rem 1px dimgray;
+    max-width:700px;
+}
+
+.title {
+  color: $mvyellow;
+}
+
+.subhead {
+  color: $mvyellow;
+}
 
 .user-events {
-  border: 3px #000000 solid;
+  border: 3px white solid;
   border-radius: 2rem;
-  margin: 10px;
+  margin: 2rem auto;
+  box-shadow: -1rem 1rem 1px gray;
+  max-width:700px;
 }
 
 .user-content {
   justify-content: center;
-  text-align: center;
   margin: 10px;
+  text-align: center;
 }

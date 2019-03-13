@@ -12,8 +12,16 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Mario Verde</h1>
-      <h2>Find your Player 2</h2>
+      <nav class="navbar navbar-fixed-top sticky navbar-light">
+        <form id="sign-out-form" class="d-none signed-in-only">
+          <button type="submit" class="btn btn-outline-light">sign out</button>
+        </form>
+      </nav>
+      <div class="all-content container">
+        <header class="jumbotron">
+      <h1 class="title text-center col-8">Mario Verde</h1>
+      <h2 class="subhead text-center">Find your Player 2</h2>
+    </header>
       <section class="request" id="crud">
         <div class="auth">
           <h3>User Stuff</h3>
@@ -22,23 +30,22 @@
         <form id="sign-in-form" class="signed-out-only">
           <input name="credentials[email]" type="email" placeholder="email" required>
           <input name="credentials[password]" type="password" placeholder="password" required>
-          <button type="submit">sign in</button>
+          <p></p>
+          <button type="submit" class="btn btn-outline-light">sign in</button>
         </form>
-
+        <button class="btn btn-outline-light show-sign-up">sign up</button>
         <form id="sign-up-form" class="signed-out-only">
           <input name="credentials[email]" type="email" placeholder="email" required>
           <input name="credentials[password]" type="password" placeholder="password" required>
           <input name="credentials[password_confirmation]" type="password" placeholder="password" required>
-          <button type="submit">sign up</button>
+          <button type="submit" class="btn btn-outline-light">sign up</button>
         </form>
 
-        <form id="sign-out-form" class="d-none signed-in-only">
-          <button type="submit">sign out</button>
-        </form>
+
         <form id="change-password-form" class="d-none signed-in-only ">
           <input name="passwords[old]" type="password" placeholder="old password" required>
           <input name="passwords[new]" type="password" placeholder="new password" required>
-          <button type="submit">change password</button>
+          <button type="submit" class="btn btn-outline-light">change password</button>
         </form>
       </div>
 
@@ -47,26 +54,17 @@
         <form id="create-event-form" class="d-none signed-in-only ">
           <input name="event[title]" type="text" placeholder="title" required>
           <textarea name="event[description]" placeholder="description" required></textarea>
-          <input name="event[date]" type="datetime-local" placeholder="date" required>
-          <button type="submit">Create Event</button>
+          <input name="event[date]" type="date" placeholder="date" required>
+          <input name="event[time]" type="time" placeholder="time" required>
+          <button type="submit" class="btn btn-outline-light">Create Event</button>
         </form>
-        <form id="index-event-form">
-          <button type="submit"> show all events</button>
-        </form>
+
         <form id="show-event-form">
           <input name="event[id]" type="number" required>
-          <button type="submit">show event</button>
+          <button type="submit" class="btn btn-outline-light">show event</button>
         </form>
-        <form id="update-event-form" class="d-none signed-in-only ">
-          <input name="event[id]" type="number" placeholder="id" required>
-          <input name="event[title]" type="text" placeholder="title" required>
-          <textarea name="event[description]" placeholder="description" required></textarea>
-          <input name="event[date]" type="datetime-local" placeholder="date" required>
-          <button type="submit">Update Event</button>
-        </form>
-        <form id="delete-event-form" class="signed-in-only d-none">
-          <input name="event[id]" type="number" placeholder="Event ID" required>
-          <button type="submit">Delete Event</button>
+        <form id="index-event-form">
+          <button type="submit" class="btn btn-outline-light"> show all events</button>
         </form>
       </div>
       </section>
@@ -74,5 +72,6 @@
       </section>
       <section class="content container" id="content">
       </section>
+    </div>
     </body>
 </html>
