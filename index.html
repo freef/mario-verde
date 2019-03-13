@@ -42,9 +42,13 @@
     </form>
   </nav>
   <div class="all-content container">
-    <header class="jumbotron">
-      <h1 class="title text-center col-8">Mario Verde</h1>
-      <h2 class="subhead text-center">Find your Player 2</h2>
+    <header class="jumbotron d-flex justify-content-start">
+        <div class="logo">
+        </div>
+        <div class="group">
+          <h1 class="title text-center col-8">Mario Verde</h1>
+          <h2 class="subhead text-center">Find your Player 2</h2>
+      </div>
     </header>
 
     <section class="main-control-bar container d-flex justify-content-space-around">
@@ -76,9 +80,9 @@
           <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required></p>
         <button type="submit" class="btn btn-outline-light edit-events-button">Create Event</button>
       </form>
-    <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">
-      <button type="submit" id="cancel-new-event-button" class="btn btn-outline-light edit-events-button">Cancel</button>
-    </form>
+      <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">
+        <button type="submit" id="cancel-new-event-button" class="btn btn-outline-light edit-events-button">Cancel</button>
+      </form>
     </div>
     <section class="my-content signed-in-only container" id="my-content">
     </section>

@@ -70,6 +70,23 @@ nav {
 
 .title {
   color: $mvyellow;
+  padding:0;
+  margin:0 auto;
+  font-size:4rem;
+}
+
+.logo {
+  width: 33%;
+  border: none;
+  border-radius: 10%;
+  background-image: url('public/Cactus3.png');
+  background-size: cover;
+  image-rendering: pixelated;
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
 }
 
 .extra-bottom-margin {
