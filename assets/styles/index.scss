@@ -1,13 +1,115 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'colors';
 
+body {
+  background: $mvyellow;
+  color: white;
+}
+
+h1 {
+  margin: 20px auto;
+  text-align: center;
+}
+
+section {
+  justify-content: center;
+  text-align: center;
+}
+
+nav {
+  background-color: $mvgray;
+  margin: 0 auto;
+  max-width:800px;
+}
+.control-button {
+  margin: .5rem;
+  padding: .5rem;
+}
+
+.edit-events-button {
+  margin: .5rem;
+  padding: .5rem;
+  width: 25%;
+}
+
+.content {
+  color: $mvgray;
+}
+
+.redbg {
+  background-color: $mvred;
+}
+
+.greenbg {
+  background-color: $mvgreen;
+}
+
+.bluebg {
+  background-color:$mvblue;
+}
+
+.all-content {
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: $mvgray;
+  min-height: 100vh;
+  padding: 5rem;
+}
+.event-card {
+  width:100%;
+}
+.jumbotron {
+  background-color: $mvred;
+  width: 100%;
+  margin: 1.5rem auto;
+  border: 1rem solid white;
+  border-radius: 25px;
+  box-shadow: -1rem 1rem 1px dimgray;
+  max-width: 700px;
+}
+
+.title {
+  color: $mvyellow;
+  padding:0;
+  margin:0 auto;
+  font-size:4rem;
+}
+
+.logo {
+  width: 33%;
+  border: none;
+  border-radius: 10%;
+  background-image: url('public/Cactus3.png');
+  background-size: cover;
+  image-rendering: pixelated;
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.extra-bottom-margin {
+  margin-bottom: 1.5rem;
+}
+
+.subhead {
+  color: $mvyellow;
+}
+.event-hider-btn {
+  margin:1rem;
+}
 .user-events {
-  border: 3px #000000 solid;
+  border: 3px white solid;
   border-radius: 2rem;
-  margin: 10px;
+  margin: 2rem auto;
+  box-shadow: -1rem 1rem 1px gray;
+  max-width: 700px;
+    padding:1rem;
 }
 
 .user-content {
   justify-content: center;
-  text-align: center;
   margin: 10px;
+  text-align: center;
 }

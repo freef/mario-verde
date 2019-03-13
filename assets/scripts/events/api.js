@@ -53,7 +53,7 @@ const updateEvent = (formData) => {
 }
 
 const deleteEvent = (formData) => {
-  const id = formData.event.id
+  const id = formData.id
   return $.ajax({
     url: config.apiUrl + `/events/${id}`,
     method: 'DELETE',

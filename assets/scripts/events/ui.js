@@ -70,6 +70,32 @@ const myEventsSuccess = (responseData) => {
   const showEventsHtml = showMyEventsTemplate({ events: responseData.events })
   $('.my-content').empty()
   $('.my-content').append(showEventsHtml)
+  $('.edit-mode').addClass('d-none')
+  $('.view-mode').removeClass('d-none')
+}
+
+const showEditBtn = (formData) => {
+  $(`.edit-mode-${formData.id}`).removeClass('d-none')
+  $(`.view-mode-${formData.id}`).addClass('d-none')
+  $('form').trigger('reset')
+  $('input').trigger('reset')
+}
+
+const stopUpdateBtn = (formData) => {
+  $(`.view-mode-${formData.id}`).removeClass('d-none')
+  $(`.edit-mode-${formData.id}`).addClass('d-none')
+  $('form').trigger('reset')
+  $('input').trigger('reset')
+}
+
+const hideEvent = (data) => {
+  $(`[data-id="${data}"]`).hide()
+  $('#user-message').text('Event closed')
+}
+
+const hideMyEvents = () => {
+  $('.my-content').empty()
+  $('#user-message').text('Events hidden')
 }
 
 module.exports = {
@@ -83,5 +109,9 @@ module.exports = {
   updateEventFailure,
   deleteEventSuccess,
   deleteEventFailure,
-  myEventsSuccess
+  myEventsSuccess,
+  showEditBtn,
+  stopUpdateBtn,
+  hideEvent,
+  hideMyEvents
 }

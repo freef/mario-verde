@@ -1,10 +1,10 @@
 {{#each events as |event|}}
-  <div class="event user-events" data-id="{{event.id}}">
+  <div class="event user-events greenbg" data-id="{{event.id}}">
+
     <div class="user-content">
     <h2>
       <small>Title:</small> {{limit event.title 40}}
     </h2>
-    <p><small>ID: </small> {{event.id}}</p>
     <p>
       <small>Description:</small>
        {{#if event.description}}
@@ -20,8 +20,14 @@
       {{else}}
         No date provided.
       {{/if}}
-      <p> <small>Contact:</small>{{event.user.email}} </p>
+      <small>Time:</small>
+      {{#if event.readtime}}{{event.readtime}}
+      {{else}}
+        No time provided.
+      {{/if}}
     </p>
+      <p> <small>Contact:</small>{{event.user.email}} </p>
+      <button class="btn btn-outline-dark event-hider-btn edit-events-button" data-id="{{event.id}}">Close Event</button>
   </div>
   </div>
 
