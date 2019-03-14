@@ -148,7 +148,7 @@ nav {
   width: 33%;
   border: none;
   border-radius: 10%;
-  background-image: url("public/Cactus3.png");
+background-image: url('public/Cactus3.png');
   background-size: cover;
   image-rendering: pixelated;
 
@@ -157,6 +157,12 @@ nav {
     display: block;
     padding-bottom: 100%;
   }
+
+}
+
+.dance {
+  background-image: url('public/Cactus4.gif');
+
 }
 
 .extra-bottom-margin {
@@ -176,10 +182,16 @@ nav {
   box-shadow: -1rem 1rem 1px gray;
   max-width: 700px;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .user-content {
   justify-content: center;
   margin: 10px;
   text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
 }

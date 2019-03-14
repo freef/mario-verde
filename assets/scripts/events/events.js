@@ -85,6 +85,11 @@ const onHideMyEvents = event => {
   ui.hideMyEvents()
 }
 
+const onLogo = event => {
+  event.preventDefault()
+  ui.logo()
+}
+
 module.exports = {
   onCreateEvent,
   onIndexEvents,
@@ -95,5 +100,6 @@ module.exports = {
   onStopUpdateBtn,
   onHideEvent,
   onIndexMyEventsBtn,
-  onHideMyEvents
+  onHideMyEvents,
+  onLogo
 }

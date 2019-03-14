@@ -7,7 +7,7 @@ const signUpSuccess = () => {
   $('input').trigger('reset')
 }
 const signUpFailure = () => {
-  $('#user-message').text('Failed to add user.')
+  $('#user-message').text('Failed to add user. Did your passwords match?')
   $('form').trigger('reset')
   $('input').trigger('reset')
 }

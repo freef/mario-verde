@@ -32,4 +32,5 @@ $(() => {
   $('.main-control-bar').on('submit', '#show-new-event-form', authEvents.onShowNewEvent)
   $('#cancel-new-event-form').on('submit', authEvents.onHideNewEvent)
   $('#hide-my-events-form').on('submit', eventEvents.onHideMyEvents)
+  $('.logo').on('click', eventEvents.onLogo)
 })
