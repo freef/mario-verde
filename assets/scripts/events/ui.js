@@ -73,7 +73,6 @@ const deleteEventFailure = () => {
 const myEventsSuccess = (responseData) => {
   $('#user-message').text('Successfully loaded events')
   const showEventsHtml = showMyEventsTemplate({ events: responseData.events })
-  console.log(responseData.events)
   $('.my-content').empty()
   $('.my-content').append(showEventsHtml)
   $('.edit-mode').addClass('d-none')
