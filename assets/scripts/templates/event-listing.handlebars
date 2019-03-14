@@ -5,33 +5,38 @@
   <div class="event user-events greenbg" data-id="{{event.id}}">
 
     <div class="user-content">
-    <h2>
-      <small>Title:</small> {{limit event.title 40}}
-    </h2>
-    <p>
-      <small>Description:</small>
-       {{#if event.description}}
-        {{event.description}}
-      {{else}}
-        No description provided.
-      {{/if}}
-    </p>
-    <p>
-      <small>Date:</small>
-      {{#if event.date}}
-        {{event.date}}
-      {{else}}
-        No date provided.
-      {{/if}}
-      <span class="time"><small>Time:</small>
-      {{#if event.readtime}}{{event.readtime}}
-      {{else}}
-        No time provided.
-      {{/if}}
-    <span class="time"></p>
-      <p> <small>Contact:</small>{{event.user.email}} </p>
+      <h2>
+        <small>Title:</small> {{limit event.title 40}}
+      </h2>
+      <p>
+        <small>Description:</small>
+        {{#if event.description}}
+          {{event.description}}
+        {{else}}
+          No description provided.
+        {{/if}}
+      </p>
+      <p><small>Console: </small>
+        {{#if event.console}}{{event.console}}
+        {{else}}
+          No console provided.
+        {{/if}}</p>
+      <p>
+        <small>Date:</small>
+        {{#if event.date}}
+          {{event.date}}
+        {{else}}
+          No date provided.
+        {{/if}}
+        <span class="time"><small>Time:</small>
+          {{#if event.readtime}}{{event.readtime}}
+          {{else}}
+            No time provided.
+          {{/if}}
+          <span class="time"></p>
+      <p> <small>Discord ID:</small>{{event.user.discord}} </p>
       <button class="btn btn-outline-dark event-hider-btn btn-sm" data-id="{{event.id}}">Close</button>
-  </div>
+    </div>
   </div>
 
 {{/each}}

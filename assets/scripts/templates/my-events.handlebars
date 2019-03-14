@@ -16,6 +16,11 @@
             No description provided.
           {{/if}}
         </p>
+        <p><small>Console: </small>
+          {{#if event.console}}{{event.console}}
+          {{else}}
+            No console provided.
+          {{/if}}</p>
         <p>
           <small>Date: </small>
           {{#if event.date}}{{event.date}}
@@ -23,13 +28,13 @@
             No date provided.
           {{/if}}
           <span class="time"><small>Time:</small>
-          {{#if event.readtime}}{{event.readtime}}
-          {{else}}
-            No time provided.
-          {{/if}}
-        </span></p>
+            {{#if event.readtime}}{{event.readtime}}
+            {{else}}
+              No time provided.
+            {{/if}}
+          </span></p>
         <p>
-          <small>Contact: </small>{{event.user.email}}</p>
+          <small>Discord ID: </small>{{event.user.discord}}</p>
         </p>
       </div>
 
@@ -37,6 +42,14 @@
         <h2>Title: <input name="event[title]" type="text" placeholder="title" value="{{event.title}}" required> </h2>
         <p class="d-none"><small>ID: </small><input name="event[id]" type="number" placeholder="id" value="{{event.id}}" required> </p>
         <p><small>Description: </small><textarea name="event[description]" placeholder="description" required>{{event.description}}</textarea></p>
+        <p><small><label for="console-select">Console:</label></small> <select id="console-select" name="event[console]" class="custom-select" required>
+            <option value="" selected>Select Console</option>
+            <option value="Switch">Nintendo Switch</option>
+            <option value="ps4">Playstation 4</option>
+            <option value="xbox">Xbox One</option>
+            <option value="pc">Computer</option>
+            <option value="tabletop">Tabletop</option>
+          </select></p>
         <p><small>Date: </small><input name="event[date]" type="date" placeholder="date" value="{{event.date}}" required></p>
         <p>
           <smal>Time: </smal><input name="event[time]" type="time" placeholder="time" value="{{event.readtime}}" required>
