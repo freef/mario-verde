@@ -47,7 +47,7 @@ Your back-end repo's README should also have
 
 ### Client Specifications
 1.  [x]  Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
-1.  [x]  Have semantically clean HTML and CSS
+1.  [x] Have semantically clean HTML and CSS
 1.  [x] User must be able to create a new resource
 1.  [x] User must be able to update a resource
 1.  [x] User must be able to delete a resource
