@@ -2,7 +2,7 @@
   <h2 class="dark-text"> My Events </h2>
 </div>
 {{#each events as |event|}}
-  <div class="event user-events redbg" data-id="{{event.id}}">
+  <div class="event user-events redbg" data-id="m{{event.id}}">
     <div class="user-content">
       <div class="view-mode-{{event.id}} view-mode">
         <h2>
@@ -70,7 +70,7 @@
         <input name="id" type="number" value="{{event.id}}" class="d-none" required>
         <button type="submit" class="d-inline btn btn-outline-light view-mode edit-btn edit-events-button">Edit Event</button>
       </form>
-      <button class="btn btn-outline-dark event-hider-btn btn-sm" data-id="{{event.id}}">Close</button>
+      <button class="btn btn-outline-dark event-hider-btn btn-sm" data-id="m{{event.id}}">Close</button>
     </div>
   </div>
 
