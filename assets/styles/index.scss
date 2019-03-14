@@ -36,8 +36,8 @@ nav {
   min-width: 75px;
   @media(min-width: 750px) {
     min-height: 0;
-    margin: .5rem;
-    padding: .5rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
     min-width: 140px;
   }
 }
@@ -148,7 +148,7 @@ nav {
   width: 33%;
   border: none;
   border-radius: 10%;
-background-image: url('public/Cactus3.png');
+  background-image: url("public/Cactus3.png");
   background-size: cover;
   image-rendering: pixelated;
 
@@ -157,12 +157,10 @@ background-image: url('public/Cactus3.png');
     display: block;
     padding-bottom: 100%;
   }
-
 }
 
 .dance {
-  background-image: url('public/Cactus4.gif');
-
+  background-image: url("public/Cactus4.gif");
 }
 
 .extra-bottom-margin {
