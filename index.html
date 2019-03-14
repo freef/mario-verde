@@ -4,8 +4,8 @@
 <head>
   <title>Mario-Verde</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon"href="public/Cactus3.png">
-
+  <link rel="icon" href="public/Cactus3.png">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -43,12 +43,12 @@
     </form>
   </nav>
   <div class="all-content container">
-    <header class="jumbotron d-flex justify-content-start">
-        <div class="logo">
-        </div>
-        <div class="group">
-          <h1 class="title text-center col-8">Mario Verde</h1>
-          <h2 class="subhead text-center">Find your Player 2</h2>
+    <header class="jumbotron d-flex justify-content-start extra-bottom-margin">
+      <div class="logo">
+      </div>
+      <div class="group">
+        <h1 class="title text-center col-8">Mario Verde</h1>
+        <h2 class="subhead text-center">Find your Player 2</h2>
       </div>
     </header>
 
@@ -72,18 +72,20 @@
       <h3 id="user-message"></h3>
 
     </div>
-    <div class="d-none new-event-field user-events user-content bluebg signed-in-only">
-      <form id="create-event-form" class="create-event-form d-none signed-in-only">
-        <h2 class="extra-bottom-margin">New Event</h2>
-        <h2><small>Title:</small> <input name="event[title]" type="text" placeholder="title" required></h2>
-        <p><small>Description:</small> <textarea name="event[description]" placeholder="description" required></textarea></p>
-        <p><small>Date:</small> <input name="event[date]" type="date" placeholder="date" required>
-        <span class="time">  <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required> </span></p>
-        <button type="submit" class="btn btn-outline-light edit-events-button">Create Event</button>
-      </form>
-      <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">
-        <button type="submit" id="cancel-new-event-button" class="btn btn-outline-light edit-events-button">Cancel</button>
-      </form>
+    <div class="container signed-in-only container extra-bottom-margin">
+      <div class="d-none new-event-field user-content user-events bluebg signed-in-only">
+        <form id="create-event-form" class="create-event-form d-none signed-in-only">
+          <h2 class="extra-bottom-margin">New Event</h2>
+          <h2><small>Title:</small> <input name="event[title]" type="text" placeholder="title" required></h2>
+          <p><small>Description:</small> <textarea name="event[description]" placeholder="description" required></textarea></p>
+          <p><small>Date:</small> <input name="event[date]" type="date" placeholder="date" required>
+            <span class="time"> <small>Time:</small> <input name="event[time]" type="time" placeholder="time" required> </span></p>
+          <button type="submit" class="btn btn-outline-light edit-events-button">Create Event</button>
+        </form>
+        <form id="cancel-new-event-form" class="cancel-event-form signed-in-only">
+          <button type="submit" id="cancel-new-event-button" class="btn btn-outline-light edit-events-button">Cancel</button>
+        </form>
+      </div>
     </div>
     <section class="my-content signed-in-only container" id="my-content">
     </section>
